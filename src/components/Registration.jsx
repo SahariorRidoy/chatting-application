@@ -1,6 +1,6 @@
 import { useState } from "react";
 import bannerImg from "../assets/banner.png";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Registration = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -51,6 +51,11 @@ const Registration = () => {
     console.log(email,name,password);
     
   };
+  // show password
+  const [showPassword,setShowPassword]=useState(false)
+  const handleShowPassword=()=>{
+    setShowPassword(!showPassword);
+    }
   return (
     <div className="flex">
       <div className="w-1/2 ml-48 mt-40">
@@ -93,7 +98,7 @@ const Registration = () => {
             <input
               className="border-2 focus:outline-none border-[#11175D] border-opacity-30 rounded-lg px-12 py-6"
               onChange={handlePassword}
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id=""
               placeholder="***********"
@@ -101,6 +106,17 @@ const Registration = () => {
             <p className="absolute top-[-12px] left-8 bg-white px-4 opacity-70 text-[#11175D]">
               Password
             </p>
+            {showPassword ? (
+              <FaEyeSlash
+                onClick={handleShowPassword}
+                className="absolute text-xl left-64 top-7 cursor-pointer"
+              />
+            ) : (
+              <FaEye
+                onClick={handleShowPassword}
+                className="absolute text-xl left-64 top-7 cursor-pointer"
+              />
+            )}
             <p className="absolute left-3 text-orange-600">{passwordError}</p>
           </div>
           <br />
