@@ -1,6 +1,7 @@
 import bannerImg from '../assets/banner2.png';
 import googleImg from '../assets/google.png'
 import eyes from '../assets/eyes.png'
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div className="flex">
@@ -21,7 +22,7 @@ const Login = () => {
             </div>
             <br />
             <button className=" mt-12 btn bg-[#5F35F5] text-xl rounded-full text-white py-5 px-[85px] mb-9 hover:opacity-70" type="submit">Sign up</button>
-            <p className="text-sm text-[#03014C] ml-6 mb-24">Don't have an account? <span className="text-[#EA6C00] font-bold"><a href="">Sign up</a></span></p>
+            <p className="text-sm text-[#03014C] ml-6 mb-24">Don't have an account? <span className="text-[#EA6C00] font-bold"><Link to='/registration'>Sign up</Link></span></p>
         </form>
       </div>
       <div className="w-1/2">

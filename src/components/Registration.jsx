@@ -1,6 +1,7 @@
 import { useState } from "react";
 import bannerImg from "../assets/banner.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Registration = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -109,12 +110,12 @@ const Registration = () => {
             {showPassword ? (
               <FaEyeSlash
                 onClick={handleShowPassword}
-                className="absolute text-xl left-64 top-7 cursor-pointer"
+                className="absolute text-xl left-60 top-7 cursor-pointer"
               />
             ) : (
               <FaEye
                 onClick={handleShowPassword}
-                className="absolute text-xl left-64 top-7 cursor-pointer"
+                className="absolute text-xl left-60 top-7 cursor-pointer"
               />
             )}
             <p className="absolute left-3 text-orange-600">{passwordError}</p>
@@ -129,7 +130,7 @@ const Registration = () => {
           <p className="text-sm text-[#03014C] ml-10 mb-24">
             Already have an account?{" "}
             <span className="text-[#EA6C00] font-bold">
-              <a href="">Sign in</a>
+              <Link to='/login'>Sign in</Link>
             </span>
           </p>
         </form>
