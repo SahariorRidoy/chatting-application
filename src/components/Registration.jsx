@@ -2,10 +2,24 @@ import { useState } from "react";
 import bannerImg from "../assets/banner.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import toast from "react-hot-toast";
+
 const Registration = () => {
+  const auth = getAuth();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setEmailError("");
@@ -18,12 +32,19 @@ const Registration = () => {
     setPassword(e.target.value);
     setPasswordError("");
   };
-  const [emailError, setEmailError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  // console.log(email,'dfdhfsd');
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  // Submit
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setEmailError("");
+    setNameError("");
+    setPasswordError("");
+
     if (!email) {
       setEmailError("Please Give a Email");
     } else {
@@ -33,14 +54,12 @@ const Registration = () => {
     // Name
     if (!name) {
       setNameError("Please Give Your Full Name");
-    }
-    else{
-      if(name.length<=2){
-        setNameError("Name must be 3 or more character long")
+    } else {
+      if (name.length <= 2) {
+        setNameError("Name must be 3 or more character long");
       }
     }
 
-    // Password
     if (!password) {
       setPasswordError("Please Provide Password");
     } else {
@@ -49,14 +68,30 @@ const Registration = () => {
           "Password must be 6 character long and included at least 1 Uppercase, 1 lowercase and 1 number"
         );
     }
-    console.log(email,name,password);
-    
-  };
-  // show password
-  const [showPassword,setShowPassword]=useState(false)
-  const handleShowPassword=()=>{
-    setShowPassword(!showPassword);
+
+    if (
+      email &&
+      name &&
+      password &&
+      /^\w+([.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) &&
+      name.length > 2
+    ) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          toast.success("Registration Successful!");
+          sendEmailVerification(auth.currentUser).then(() => {
+            toast.success('Verification Email Sent. Please check your inbox')
+          });
+          setEmail("");
+          setName("");
+          setPassword("");
+        })
+        .catch(() => {
+          toast.error("Registration Unsuccessful!");
+        });
     }
+  };
+
   return (
     <div className="flex">
       <div className="w-1/2 ml-48 mt-40">
@@ -71,8 +106,8 @@ const Registration = () => {
             className="border-2 focus:outline-none border-[#11175D] border-opacity-30 rounded-lg px-12 py-6"
             onChange={handleEmail}
             type="text"
-            name=""
-            id=""
+            name="email"
+            value={email}
             placeholder="example@mail.com"
           />
           <p className="absolute top-[-12px] left-8 bg-white px-4 opacity-70 text-[#11175D]">
@@ -85,6 +120,8 @@ const Registration = () => {
               className="border-2 focus:outline-none border-[#11175D] border-opacity-30 rounded-lg px-12 py-6 my-14"
               onChange={handleName}
               type="text"
+              name="name"
+              value={name}
               placeholder="Enter your name"
             />
             <p className="absolute top-[45px] left-8 bg-white px-4 opacity-70 text-[#11175D]">
@@ -101,7 +138,7 @@ const Registration = () => {
               onChange={handlePassword}
               type={showPassword ? "text" : "password"}
               name="password"
-              id=""
+              value={password}
               placeholder="***********"
             />
             <p className="absolute top-[-12px] left-8 bg-white px-4 opacity-70 text-[#11175D]">
@@ -130,7 +167,7 @@ const Registration = () => {
           <p className="text-sm text-[#03014C] ml-10 mb-24">
             Already have an account?{" "}
             <span className="text-[#EA6C00] font-bold">
-              <Link to='/login'>Sign in</Link>
+              <Link to="/login">Sign in</Link>
             </span>
           </p>
         </form>
