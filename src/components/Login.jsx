@@ -106,12 +106,12 @@ const Login = () => {
               placeholder="Enter your password"
             />
             {showPassword ? (
-              <FaEyeSlash
+              <FaEye
                 onClick={handleShowPassword}
                 className="absolute text-xl left-52 top-12 cursor-pointer"
               />
             ) : (
-              <FaEye
+              <FaEyeSlash
                 onClick={handleShowPassword}
                 className="absolute text-xl left-52 top-12 cursor-pointer"
               />

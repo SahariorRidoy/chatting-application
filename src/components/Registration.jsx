@@ -1,15 +1,18 @@
 import { useState } from "react";
 import bannerImg from "../assets/banner.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
-import toast from "react-hot-toast";
+
 
 const Registration = () => {
+  const navigate=useNavigate()
   const auth = getAuth();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -85,6 +88,7 @@ const Registration = () => {
           setEmail("");
           setName("");
           setPassword("");
+          navigate('/login')
         })
         .catch(() => {
           toast.error("Registration Unsuccessful!");
@@ -145,12 +149,12 @@ const Registration = () => {
               Password
             </p>
             {showPassword ? (
-              <FaEyeSlash
+              <FaEye
                 onClick={handleShowPassword}
                 className="absolute text-xl left-60 top-7 cursor-pointer"
               />
             ) : (
-              <FaEye
+              <FaEyeSlash
                 onClick={handleShowPassword}
                 className="absolute text-xl left-60 top-7 cursor-pointer"
               />
