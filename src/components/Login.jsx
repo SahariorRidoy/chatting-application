@@ -4,19 +4,28 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 const Login = () => {
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setEmailError("");
   };
+
   const handlePassword = (e) => {
     setPassword(e.target.value);
     setPasswordError("");
@@ -26,7 +35,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleLogin = (e) => {
+  const handelLoginWithEmailPassword = (e) => {
     e.preventDefault();
     setEmailError("");
     setPasswordError("");
@@ -62,11 +71,29 @@ const Login = () => {
         })
         .catch(() => {
           toast.error(
-            "Signin Information is not valid, Try using valid username and password"
+            "Signin Information is not valid, Try using valid email/password or create a new account"
           );
         });
     }
   };
+
+  const handleGoogleLogin=()=>{
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      toast.success("login successful");
+      const user = result.user;
+      
+      setTimeout(()=>{
+        navigate("/home");
+      },1000)
+      
+    }).catch(() => {
+      
+    });
+  
+  }
+
+
   return (
     <div className="flex">
       <div className="w-1/2 ml-48 mt-40">
@@ -75,9 +102,9 @@ const Login = () => {
         </h1>
         <div className="hover:opacity-50 cursor-pointer w-60 flex gap-3 border-[#11175D] rounded-lg items-center py-5 border-2 pl-7 pr-10 border-opacity-30 mb-8">
           <img src={googleImg} alt="" />
-          <p>Login with Google</p>
+          <button onClick={handleGoogleLogin}>Login with Google</button>
         </div>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handelLoginWithEmailPassword}>
           <div className="relative">
             <label className="text-[#03014C] opacity-50">Email Address</label>{" "}
             <br />
@@ -120,6 +147,10 @@ const Login = () => {
               {passwordError}
             </p>
           </div>
+          <br />
+          <Link to="/forgot-password" className="hover:underline">
+            Forgot Password ?
+          </Link>
           <br />
           <button
             className=" mt-12 btn bg-[#5F35F5] text-xl rounded-full text-white py-5 px-[85px] mb-9 hover:opacity-70"

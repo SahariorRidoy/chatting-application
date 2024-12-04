@@ -98,7 +98,7 @@ const Registration = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/2 ml-48 mt-40">
+      <div className="w-1/2 ml-48 mt-28">
         <h1 className="text-[#11175D] text-4xl font-bold mb-3">
           Get started with easily register
         </h1>

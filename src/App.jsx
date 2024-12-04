@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import ErrorPage from "./components/ErrorPage";
+import ForgotPassword from "./components/ForgotPassword";
 
 const router = createBrowserRouter(createRoutesFromElements(<Route>
   
@@ -28,6 +29,9 @@ const router = createBrowserRouter(createRoutesFromElements(<Route>
   />
   <Route
    path="/*" element={<ErrorPage></ErrorPage>}
+  />
+  <Route
+   path="/forgot-password" element={<ForgotPassword></ForgotPassword>}
   />
 </Route>));
 
