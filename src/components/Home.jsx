@@ -14,7 +14,8 @@ import plusIcon from "../assets/+.png";
 
 const Home = () => {
   return (
-    <div className="m-8 grid gap-10 grid-cols-12">
+      <div className="m-8 grid gap-10 grid-cols-12">
+        {/* Sidebar start */}
       <div className="col-span-2 bg-[#5F35F5] rounded-[20px] flex flex-col  ">
         <div className="mt-[38px] flex justify-center mb-16">
           <img src={userIcon} alt="" />
@@ -36,6 +37,11 @@ const Home = () => {
           <img src={logoutIcon} alt="" />
         </div>
       </div>
+      {/* Sidebar End */}
+
+
+
+      {/* Contents Start here */}
       <div className="col-span-10 gap-5 grid grid-cols-10">
         <div className="col-span-4 border border-red-600 "></div>
 
@@ -216,6 +222,7 @@ const Home = () => {
           </div>
         </div>
         </div>
+
 
         {/***********  right side ************/}
         <div className="col-span-3">
