@@ -11,7 +11,7 @@ const UserBlockedUser = () => {
         {/* Top part */}
         <div className="p-5 border-2 rounded-[20px]">
           <div className="flex justify-between mb-[30px]">
-            <h1>User List</h1>
+          <h1 className="font-semibold text-xl">User List</h1>
             <div>
               <img src={dotIcon} alt="" />
             </div>
@@ -27,7 +27,7 @@ const UserBlockedUser = () => {
                 <p>Today, 8:56pm</p>
               </div>
             </div>
-            <div className="bg-[#5F35F5] p-2 mr-16">
+            <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
               <img src={plusIcon} alt="" />
             </div>
           </div>
@@ -42,7 +42,7 @@ const UserBlockedUser = () => {
                 <p>Today, 2:31pm</p>
               </div>
             </div>
-            <div className="bg-[#5F35F5] p-2 mr-16">
+            <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
               <img src={plusIcon} alt="" />
             </div>
           </div>
@@ -57,7 +57,7 @@ const UserBlockedUser = () => {
                 <p>Yesterday, 8:56pm</p>
               </div>
             </div>
-            <div className="bg-[#5F35F5] p-2 mr-16">
+            <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
               <img src={plusIcon} alt="" />
             </div>
           </div>
@@ -73,12 +73,12 @@ const UserBlockedUser = () => {
               </div>
             </div>
 
-            <div className="bg-[#5F35F5] p-2 mr-16">
+            <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
               <img src={plusIcon} alt="" />
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pb-6">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={marvin} alt="" />
@@ -88,7 +88,7 @@ const UserBlockedUser = () => {
                 <p>Today, 8:56pm</p>
               </div>
             </div>
-            <div className="bg-[#5F35F5] p-2 mr-16">
+            <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
               <img src={plusIcon} alt="" />
             </div>
           </div>
@@ -97,7 +97,7 @@ const UserBlockedUser = () => {
         {/* Bottom Part */}
         <div className="p-5 border-2 mt-11 rounded-[20px]">
           <div className="flex justify-between mb-[30px]">
-            <h1>User List</h1>
+          <h1 className="font-semibold text-xl">Blocked Users</h1>
             <div>
               <img src={dotIcon} alt="" />
             </div>
@@ -164,7 +164,7 @@ const UserBlockedUser = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pb-1">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={marvin} alt="" />

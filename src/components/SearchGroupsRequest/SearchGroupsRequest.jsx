@@ -88,7 +88,7 @@ const SearchGroupsRequest = () => {
             </div>
           </div>
           {/* user list flexed */}
-          <div className="flex items-center justify-between mb-7">
+          <div className="flex items-center justify-between mb-8">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={raghav} alt="" />
@@ -103,7 +103,7 @@ const SearchGroupsRequest = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between mb-7">
+          <div className="flex items-center justify-between mb-8">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={swathi} alt="" />
@@ -118,7 +118,7 @@ const SearchGroupsRequest = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between mb-7">
+          <div className="flex items-center justify-between mb-8">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={kiran} alt="" />
@@ -132,7 +132,7 @@ const SearchGroupsRequest = () => {
               <p className="font-semibold text-xl text-white">Accept</p>
             </div>
           </div>
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between pb-14">
             <div className="flex items-center">
               <div className="mr-3">
                 <img src={tejeshwini} alt="" />
