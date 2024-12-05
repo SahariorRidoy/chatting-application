@@ -9,7 +9,7 @@ const UserBlockedUser = () => {
     return (
         <div className="col-span-3">
         {/* Top part */}
-        <div className="p-5 border-2 rounded-[20px]">
+        <div className="p-5 border-2 rounded-[20px] shadow-lg">
           <div className="flex justify-between mb-[30px]">
           <h1 className="font-semibold text-xl">User List</h1>
             <div>
@@ -24,7 +24,7 @@ const UserBlockedUser = () => {
               </div>
               <div>
                 <h2 className="font-semibold">Raghav</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
@@ -39,7 +39,7 @@ const UserBlockedUser = () => {
               </div>
               <div>
                 <h2 className="font-semibold">Swathi</h2>
-                <p>Today, 2:31pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 2:31pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
@@ -54,7 +54,7 @@ const UserBlockedUser = () => {
               </div>
               <div>
                 <h2 className="font-semibold">Kiran</h2>
-                <p>Yesterday, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Yesterday, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
@@ -69,7 +69,7 @@ const UserBlockedUser = () => {
               </div>
               <div>
                 <h2 className="font-semibold">Tejeshwini C</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ const UserBlockedUser = () => {
               </div>
               <div>
                 <h2 className="font-semibold">Marvin McKinney</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md p-2 mr-16">
@@ -95,7 +95,7 @@ const UserBlockedUser = () => {
         </div>
 
         {/* Bottom Part */}
-        <div className="p-5 border-2 mt-11 rounded-[20px]">
+        <div className="p-5 border-2 mt-11 rounded-[20px] shadow-lg">
           <div className="flex justify-between mb-[30px]">
           <h1 className="font-semibold text-xl">Blocked Users</h1>
             <div>
@@ -110,7 +110,7 @@ const UserBlockedUser = () => {
               </div>
               <div className="">
                 <h2 className="font-semibold">Raghav</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md px-2 mr-10">
@@ -125,7 +125,7 @@ const UserBlockedUser = () => {
               </div>
               <div className="">
                 <h2 className="font-semibold">Swathi</h2>
-                <p>Today, 2:31pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 2:31pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md px-2 mr-10">
@@ -140,7 +140,7 @@ const UserBlockedUser = () => {
               </div>
               <div className="">
                 <h2 className="font-semibold">Kiran</h2>
-                <p>Yesterday, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Yesterday, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md px-2 mr-10">
@@ -155,7 +155,7 @@ const UserBlockedUser = () => {
               </div>
               <div className="">
                 <h2 className="font-semibold">Tejeshwini C</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ const UserBlockedUser = () => {
               </div>
               <div className="">
                 <h2 className="font-semibold">Marvin McKinney</h2>
-                <p>Today, 8:56pm</p>
+                <p className="font-medium text-[14px] text-[#4D4D4DBF]">Today, 8:56pm</p>
               </div>
             </div>
             <div className="bg-[#5F35F5] rounded-md px-2 mr-10">

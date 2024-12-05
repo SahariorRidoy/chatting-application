@@ -12,8 +12,8 @@ const FridendMyGroup = () => {
     return (
         <div className="col-span-3">
         <div className="col-span-3">
-          {/* Top part */}
-          <div className="p-5 border-2 rounded-[20px]">
+          {/* Top part */} 
+          <div className="p-5 border-2 rounded-[20px] shadow-lg">
             <div className="flex justify-between mb-[30px]">
               <h1 className="font-semibold text-xl">Friends</h1>
               <div>
@@ -28,11 +28,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Raghav</h2>
-                  <p>Dinner?</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Dinner?</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Today, 8:56pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 8:56pm</p>
               </div>
             </div>
 
@@ -43,11 +43,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Swathi</h2>
-                  <p>Sure!</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Sure!</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Today, 2:31pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 2:31pm</p>
               </div>
             </div>
 
@@ -58,11 +58,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Kiran</h2>
-                  <p>Hi.....</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Hi.....</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Yesterday, 6:22pm</p>
+               <p className="font-medium text-[10px] opacity-50">Yesterday, 6:22pm</p>
               </div>
             </div>
 
@@ -73,12 +73,12 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Tejeshwini C</h2>
-                  <p>I will call him today.</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">I will call him today.</p>
                 </div>
               </div>
 
               <div className=" ">
-               <p>Today, 12:22pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 12:22pm</p>
               </div>
             </div>
 
@@ -86,7 +86,7 @@ const FridendMyGroup = () => {
           </div>
 
           {/* Bottom Part */}
-          <div className="p-5 border-2 mt-11 rounded-[20px]">
+          <div className="p-5 border-2 mt-11 rounded-[20px] shadow-lg">
             <div className="flex justify-between mb-[30px]">
             <h1 className="font-semibold text-xl">My Groups</h1>
               <div>
@@ -101,11 +101,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Raghav</h2>
-                  <p>Dinner?</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Dinner?</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Today, 8:56pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 8:56pm</p>
               </div>
             </div>
 
@@ -116,11 +116,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Swathi</h2>
-                  <p>Sure!</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Sure!</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Today, 2:31pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 2:31pm</p>
               </div>
             </div>
 
@@ -131,11 +131,11 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Kiran</h2>
-                  <p>Hi.....</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">Hi.....</p>
                 </div>
               </div>
               <div className=" ">
-               <p>Yesterday, 6:22pm</p>
+               <p className="font-medium text-[10px] opacity-50">Yesterday, 6:22pm</p>
               </div>
             </div>
 
@@ -146,12 +146,12 @@ const FridendMyGroup = () => {
                 </div>
                 <div>
                   <h2 className="font-semibold">Tejeshwini C</h2>
-                  <p>I will call him today.</p>
+                  <p className="font-medium text-[12px] text-[#4D4D4DBF]">I will call him today.</p>
                 </div>
               </div>
 
               <div className=" ">
-               <p>Today, 12:22pm</p>
+               <p className="font-medium text-[10px] opacity-50">Today, 12:22pm</p>
               </div>
             </div>
 

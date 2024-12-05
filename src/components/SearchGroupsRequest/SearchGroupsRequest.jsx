@@ -11,8 +11,8 @@ import crazyCousinsIcon from "../../assets/crazyCousinsPic.png";
 const SearchGroupsRequest = () => {
     return (
 <div className="col-span-4 ">
-          
-          <div className="h-[60px] rounded-full border-2 mb-11 p-5 flex justify-between items-center">
+          {/* Search */}
+          <div className="h-[60px] shadow-lg rounded-full border-2 mb-11 p-5 flex justify-between items-center">
             <div className="flex items-center gap-9">
             <div><img src={searchIcon} alt="" /></div>
             <input type="text" placeholder="Search" />
@@ -21,7 +21,7 @@ const SearchGroupsRequest = () => {
           </div>
          
         {/* Top part */}
-        <div className="p-5 border-2 rounded-[20px]">
+        <div className="p-5 border-2 rounded-[20px] shadow-md">
           <div className="flex justify-between mb-[30px]">
             <h1 className="font-semibold text-xl">Groups List</h1>
             <div>
@@ -80,7 +80,7 @@ const SearchGroupsRequest = () => {
         </div>
 
         {/* Bottom Part */}
-        <div className="p-5 border-2 mt-11 rounded-[20px]">
+        <div className="p-5  mt-11 rounded-[20px]">
           <div className="flex justify-between mb-[30px]">
           <h1 className="font-semibold text-xl">Friend  Request</h1>
             <div>
