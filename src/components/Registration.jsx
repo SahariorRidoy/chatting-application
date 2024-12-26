@@ -3,7 +3,8 @@ import bannerImg from "../assets/banner.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { getDatabase, ref, set } from "firebase/database";
+import { db } from '../Authentication/firebase.config'; // Import the db from firebase.js
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -12,6 +13,7 @@ import {
 
 
 const Registration = () => {
+  const db = getDatabase();
   const navigate=useNavigate()
   const auth = getAuth();
   const [email, setEmail] = useState("");
@@ -80,18 +82,33 @@ const Registration = () => {
       name.length > 2
     ) {
       createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          toast.success("Registration Successful!");
-          sendEmailVerification(auth.currentUser).then(() => {
-            toast.success('Verification Email Sent. Please check your inbox')
-          });
-          setEmail("");
-          setName("");
-          setPassword("");
-          navigate('/login')
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+
+        toast.success("Registration Successful!");
+        setEmail("");
+        setName("");
+        setPassword("");
+        navigate('/login')
+        sendEmailVerification(auth.currentUser).then(() => {
+          toast.success('Verification Email Sent. Please check your inbox')
         })
-        .catch(() => {
-          toast.error("Registration Unsuccessful!");
+        .then(()=>{
+          return set(ref(db, 'users/' + user.uid), {
+            username: name,
+            email: email,
+          });
+        })
+        .then(() => {
+          // Additional actions after data is stored
+        })
+        .catch((error) => {
+          toast.error(error.message||"Registration Unsuccessful!");
+        });
+      })
+        .catch((error) => {
+          toast.error(error.message||"Registration Unsuccessful!");
         });
     }
   };
